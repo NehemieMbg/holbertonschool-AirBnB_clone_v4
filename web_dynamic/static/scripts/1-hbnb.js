@@ -1,18 +1,12 @@
 $(document).ready(function () {
   let amenityId = [];
   $('input:checkbox').change(function () {
-    // console.log(this);
-    // alert('checked!');
-    let name = $(this).attr('data-name');
-    // if ($(this).prop('checked', true)) {
     if ($(this).is(':checked')) {
-      amenityId.push(name);
+      amenityId.push($(this).data('name'));
     } else {
-      amenityId = amenityId.filter(amens => amens !== name);
+      amenityId = amenityId.filter(amens => amens !== amenName);
     }
+    console.log(amenityId);
     $('.amenities h4').text(amenityId.join(', '));
   });
-  console.log(amenityId);
 });
-
-// alert('youhou');
